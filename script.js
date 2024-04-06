@@ -1,22 +1,33 @@
 console.log("Hola!.This page is loaded!");
 const article = document.getElementsByTagName("*");
-console.log(article);
+var articleCopy = JSON.parse(JSON.stringify(article));
 var matches = [
   "-xtcore.js",
   "/?livehit=",
   "/?record&key=",
   "/__utm.gif",
   "footer",
+  "ads-column",
+  "parag",
 ];
+var matchMap = {};
 var matchesHit = [];
-if (article) {
-  for (var j = 0; j < article.length; j++) {
-    const text = article[j].innerHTML;
+
+// function CheckChildren(parent){
+//     for (var i = 0; i < parent.length; i++){
+//         if (parent[i].indexOf())
+//     }
+// }
+
+if (articleCopy) {
+  for (var j = 0; j < articleCopy.length; j++) {
+    const text = articleCopy[j].innerHTML;
+    var currentArt = articleCopy[j];
     for (var i = 0; i < matches.length; i++) {
       if (text.indexOf(matches[i]) !== -1) {
-        if (!matchesHit.includes(article[j])) {
-          matchesHit.push(article[j]);
-          console.log(article[j]);
+        if (!matchesHit.includes(currentArt)) {
+          matchesHit.push(currentArt);
+          console.log(articleCopy[j]);
         }
       }
     }

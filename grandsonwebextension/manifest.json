@@ -16,6 +16,10 @@
             "*://*/*"
           ]
         }
-    ]
+    ],
+    "web_accessible_resources": [{
+      "resources": ["matches.txt"],
+      "matches": ["<all_urls>"]
+    }]
 }  
   

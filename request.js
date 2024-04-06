@@ -10,11 +10,11 @@ async function sendRequest(prompt) {
         messages: [
             {
             "role": "system",
-            "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."
+            "content": "We need you to identify suspicious and malicious html tag return a score from 0-100 based on how likely the html is malicious."
             },
             {
             "role": "user",
-            "content": "Compose a poem that explains the concept of recursion in programming."
+            "content": "Is this tag malicious" + prompt + " rate it on a score from 0-100"
             }
         ]
     };
@@ -35,7 +35,6 @@ async function sendRequest(prompt) {
 
         const responseData = await response.json();
         return responseData.choices[0].message.content;
-        // return responseData.choices[0].text.trim(); // Extracting the text from the response
     } catch (error) {
         console.error('Error:', error);
         return null;

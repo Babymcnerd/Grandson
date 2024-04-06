@@ -22,6 +22,10 @@ for (var i = 0; i < matches.length; i++) {
 }
 elements_queue = [document.documentElement];
 while (elements_queue.length > 0) {
+    if (elements_queue[0].innerHTML.length == 0) {
+        elements_queue.shift();
+        continue;
+    }
     i = 0;
     while (i !== -1) {
         i = content.indexOf(elements_queue[0].innerHTML, i);

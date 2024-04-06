@@ -47,6 +47,7 @@ unique_matching_elements = [];
 for (var m = 0; m < matching_elements.length; m++) {
   if (!unique_matching_elements.includes(matching_elements[m])) {
     unique_matching_elements.push(matching_elements[m]);
+    matching_elements[m].insertAdjacentHTML("afterbegin", m);
   }
 }
 console.log(unique_matching_elements);

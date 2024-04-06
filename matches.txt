@@ -1,0 +1,4 @@
+-xtcore.js
+/?livehit=
+/?record&key=
+/__utm.gif

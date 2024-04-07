@@ -11,7 +11,7 @@ The code requires a ChatGPT API key. This should be provided to the apiKey varia
 To load the extension into chrome, go to chrome://extensions on the top right make sure "Developer Mode" is checked
 ![image](https://github.com/Babymcnerd/Grandson/assets/53285593/75526e4b-d02e-4559-8742-50b6a078cbbb)
 
-After that click Load Unpakced in the top left
+After that click Load Unpacked in the top left
 ![image](https://github.com/Babymcnerd/Grandson/assets/53285593/75f921aa-8c24-4bb6-94d4-5acf302e6a21)
 
 From there find the folder where you downloaded the github repo to and click "Select Folder"

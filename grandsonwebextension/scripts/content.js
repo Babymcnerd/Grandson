@@ -1,6 +1,7 @@
 // const patterns = ["para"];
 
 const url = chrome.runtime.getURL("matches.txt");
+const html = chrome.runtime.getURL("scripts/warning.html");
 
 async function getURL(url) {
   var text = await fetch(url);
@@ -72,7 +73,16 @@ function addToScreen(htmlElement, index) {
     sendRequest(htmlElement).then((response) => {
         data = JSON.parse(response);
         score = data.score;
-        matching_elements[index].insertAdjacentHTML("afterbegin", response);
+        if (score > 92.5) {
+            matching_elements[index].insertAdjacentHTML("afterend", `<div style="background-color: #ffdddd; border-left: 6px solid #f44336; padding: 10px; margin-bottom: 20px;">score ${score}</div>` );
+        }
+        else {
+            matching_elements[index].insertAdjacentHTML("afterend", `<div style="background-color: #6bff9a; border-left: 6px solid #4CAF50; padding: 10px; margin-bottom: 20px;">score ${score}</div>` );
+
+        }
+        // getURL(html).then(response => {
+        //     matching_elements[index].insertAdjacentHTML("afterbegin", response);
+        // })
     });
 
 }

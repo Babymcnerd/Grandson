@@ -15,7 +15,7 @@ The code requires a ChatGPT API key. This should be provided to the apiKey varia
 ## Elevator Pitch
 Hey there, Today, let's chat about our pickhacks2024 project Grandson, a trusted Chrome browser extension and how it keeps you safe online. We'll dive into those colorful boxes you might see next to ads.
 Grandson starts by scanning web pages for ads, just like a pro. But here's the cool part: when it finds an ad, it gives it a little color code!
-Green means ChatGPT thinks the ad. It's like a big thumbs-up from your favorite tech guru.
+Green means ChatGPT thinks the ad looks okay. It's like a big thumbs-up from your favorite tech guru.
 But what about yellow? Well, that's when ChatGPT isn't quite sure. It's like saying, 'Hmm, better be cautious.'
 And then there's red. That's when ChatGPT says, 'Whoa, hold up! This ad might be trouble.' It's like a bright warning sign.
 So, when you're browsing and you see those colorful boxes next to ads, you'll know exactly what they mean.

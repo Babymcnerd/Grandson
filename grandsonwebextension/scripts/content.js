@@ -59,17 +59,23 @@ var URLoutput = getURL(url).then((Response) => {
   unique_matching_elements = [];
   for (var m = 0; m < matching_elements.length; m++) {
     if (!unique_matching_elements.includes(matching_elements[m])) {
-      unique_matching_elements.push(matching_elements[m]);
-      matching_elements[m].insertAdjacentHTML("afterbegin", m);
+        unique_matching_elements.push(matching_elements[m]);
+        addToScreen(matching_elements[m], m)
     }
   }
   console.log(unique_matching_elements);
-  var GPTanswer = "";
-  console.log("kekw");
-  sendRequest(unique_matching_elements[0]).then((response) => {
-    GPTanswer = response;
-  });
 });
+
+function addToScreen(htmlElement, index) {
+    console.log(htmlElement.toString())
+    console.log(htmlElement)
+    sendRequest(htmlElement).then((response) => {
+        data = JSON.parse(response);
+        score = data.score;
+        matching_elements[index].insertAdjacentHTML("afterbegin", response);
+    });
+
+}
 
 async function sendRequest(prompt) {
   const apiUrl = "https://api.openai.com/v1/chat/completions";
@@ -97,7 +103,7 @@ async function sendRequest(prompt) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
+        "Authorization": `Bearer ${apiKey}`,
       },
       body: JSON.stringify(requestBody),
     });
@@ -107,7 +113,6 @@ async function sendRequest(prompt) {
     }
 
     const responseData = await response.json();
-    console.log("hello" + responseData.choices[0].message.content);
     return responseData.choices[0].message.content;
   } catch (error) {
     console.error("Error:", error);

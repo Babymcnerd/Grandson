@@ -2,6 +2,7 @@ ad-unit
 ad_unit
 ad-col
 ad-left
+alt="Advertisement"
 google-ads
 google-analytics
 ads.showads

@@ -5,7 +5,22 @@ This Chrome web extension first identifies advertisements in webpages and extrac
 
 The code for the extension is in the grandsonwebextension folder. See https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked for how to load a Chrome extension from a folder.
 
-The code requires a ChatGPT API key. This should be provided to the apiKey variable on line 76 in grandsonwebextension/scripts/content.js.
+The code requires a ChatGPT API key. This should be provided to the apiKey variable on line 97 in grandsonwebextension/scripts/content.js.
+![image](https://github.com/Babymcnerd/Grandson/assets/53285593/9b41edd6-9f4a-4304-8bc9-c64fd0863fbe)
+
+To load the extension into chrome, go to chrome://extensions on the top right make sure "Developer Mode" is checked
+![image](https://github.com/Babymcnerd/Grandson/assets/53285593/75526e4b-d02e-4559-8742-50b6a078cbbb)
+
+After that click Load Unpakced in the top left
+![image](https://github.com/Babymcnerd/Grandson/assets/53285593/75f921aa-8c24-4bb6-94d4-5acf302e6a21)
+
+From there find the folder where you downloaded the github repo to and click "Select Folder"
+![image](https://github.com/Babymcnerd/Grandson/assets/53285593/554796ff-e43e-4814-9aa4-162d732ede8e)
+
+After that you should be good to go!
+
+![image](https://github.com/Babymcnerd/Grandson/assets/53285593/528fc36d-3c5f-4bb0-ac4a-72aafeb123f2)
+
 
 ## Major Achivments
 - Created a browser extenstion.

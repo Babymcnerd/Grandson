@@ -73,12 +73,12 @@ function addToScreen(htmlElement, index) {
     sendRequest(htmlElement).then((response) => {
         data = JSON.parse(response);
         score = data.score;
-        if (score > 30) {
-            matching_elements[index].insertAdjacentHTML("afterend", `<div style="background-color: #ffdddd; border-left: 6px solid #f44336; padding: 10px; margin-bottom: 20px;">score ${score}</div>` );
-        }
-        else {
+        if (score < 30) {
             matching_elements[index].insertAdjacentHTML("afterend", `<div style="background-color: #6bff9a; border-left: 6px solid #4CAF50; padding: 10px; margin-bottom: 20px;">score ${score}</div>` );
-
+        } else if (score < 70) {
+            matching_elements[index].insertAdjacentHTML("afterend", `<div style="background-color: #edf659; border-left: 6px solid #effa3a; padding: 10px; margin-bottom: 20px;">score ${score}</div>` );
+        } else {
+            matching_elements[index].insertAdjacentHTML("afterend", `<div style="background-color: #ffdddd; border-left: 6px solid #f44336; padding: 10px; margin-bottom: 20px;">score ${score}</div>` );
         }
     });
 
@@ -96,7 +96,7 @@ async function sendRequest(prompt) {
       {
         role: "system",
         content:
-          "We need you to identify suspicious and malicious ads. We will give you html tags. Return a json object that has a message field and score field where score is a number between 0-100. Try to not make all of the ads malicious.",
+          "We need you to identify suspicious and malicious ads. We will give you an html tags. Return a json object that has a message field and score field where score is a number between 0-100. Try to not make all of the ads malicious.",
       },
       {
         role: "user",
